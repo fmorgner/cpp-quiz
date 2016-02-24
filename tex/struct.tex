@@ -1,0 +1,39 @@
+\begin{frame}[fragile]
+  \frametitle{struct1}
+  \begin{lstlisting}[language={[11]C++}]
+  #include <iostream>
+
+  struct S {
+    int memfun() { return 1; }
+    int memfun() && { return 2; }
+  };
+
+  int main() {
+    S o{};
+
+    std::cout << o.memfun();
+    std::cout << S{}.memfun();
+  }
+  \end{lstlisting}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{struct1}
+  \begin{lstlisting}[language={[11]C++}]
+  #include <iostream>
+
+  struct B {
+    virtual ~B() = default;
+    float a;
+    float b;
+  };
+
+  struct D : B {
+    float c;
+  };
+
+  int main() {
+    std::cout << "sizeof(B): " << sizeof(B) << '\n';
+    std::cout << "sizeof(D): " << sizeof(D) << '\n';
+  }
+  \end{lstlisting}
+\end{frame}
