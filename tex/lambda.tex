@@ -1,0 +1,45 @@
+\begin{frame}[fragile]
+  \begin{lstlisting}
+#include <iomanip>
+#include <iostream>
+#include <type_traits>
+
+using namespace std;
+
+int main() {
+  int i, &j = i;
+
+  [=]{
+  cout << std::is_same<decltype( j ), int       &>()
+       << std::is_same<decltype((j)), int const &>()
+       << std::is_same<int &,         int const &>();
+  }();
+}
+  \end{lstlisting}
+\end{frame}
+\begin{frame}[fragile]
+  \begin{lstlisting}
+#include <iostream>
+
+struct A {
+  A() = default;
+  A(A const &) { std::cout << "A\n"; }
+};
+
+struct B {
+  B() = default;
+  B(B const &) { std::cout << "B\n"; }
+};
+
+auto f(B const &) { }
+
+int main() {
+  A a{};
+  B b{};
+  [=]{
+    std::cout << sizeof(a) << '\n';
+    f(b);
+  }();
+}
+  \end{lstlisting}
+\end{frame}

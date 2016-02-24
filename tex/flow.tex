@@ -1,0 +1,32 @@
+\begin{frame}[fragile]
+  \begin{lstlisting}[commentstyle=\color{black}]
+#include <iostream>
+
+int main()
+  {
+  https://github.com/fmorgner/cppquiz
+
+  std::cout << "cppugzh\n";
+  }
+  \end{lstlisting}
+\end{frame}
+\begin{frame}[fragile]
+  \begin{lstlisting}[commentstyle=\color{black}]
+#include <iostream>
+
+struct S {
+  S() { std::cout << "c"; }
+  ~S() { std::cout << "d"; }
+};
+
+int main() {
+  int i{};
+
+mark:
+  S s{};
+  while(!i++) {
+    goto mark;
+  }
+}
+  \end{lstlisting}
+\end{frame}

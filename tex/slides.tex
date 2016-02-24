@@ -6,33 +6,26 @@
 \usepackage{relsize}
 \usepackage{lmodern}
 \usepackage{listings}
+\usepackage{times}
+\usepackage{textcomp}
+
 \renewcommand{\ttdefault}{pcr}
-\lstset{basicstyle=\footnotesize\ttfamily\bfseries,breaklines=true,showstringspaces=false}
-\lstdefinelanguage{JavaScript}{
-  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
-  keywordstyle=\color{blue}\bfseries,
-  ndkeywords={class, export, boolean, throw, implements, import, this},
-  ndkeywordstyle=\color{darkgray}\bfseries,
-  identifierstyle=\color{black},
-  sensitive=false,
-  comment=[l]{//},
-  morecomment=[s]{/*}{*/},
-  commentstyle=\color{purple}\ttfamily,
-  stringstyle=\color{red}\ttfamily,
-  morestring=[b]',
-  morestring=[b]"
-  literate={~} {$\sim$}{1}
-}
-\lstset{ keywordstyle=\color{blue},
+\lstset{
+  language={[11]C++},
+  basicstyle=\footnotesize\ttfamily\bfseries,
+  breaklines=true,
+  showstringspaces=false,
+  keywordstyle=\color{blue},
   stringstyle=\color{red},
   commentstyle=\color{magenta},
-  morecomment=[l][\color{magenta}]{\#}
+  literate={~}{\texttildelow}{1},
+  directivestyle=\color{red}
 }
 
 \renewcommand*{\UrlFont}{\ttfamily\smaller\relax}
 \mode<presentation>
 
-\useoutertheme[subsection=false]{miniframes} %alternative smoothbar
+\useoutertheme[subsection=false]{miniframes}
 
 \title{{\Huge C++ Quiz}}
 \author{Felix Morgner}
@@ -57,14 +50,36 @@
 
   \section{Questions}
   \input{struct}
+  \input{cast}
+  \input{const}
+  \input{flow}
+  \input{lambda}
+  \input{order}
+  \input{init}
+  \input{call}
+  \input{funky}
 
+  \section{The end}
   \frame
   {
-    \frametitle{Q\&A}
+    \frametitle{Thanks}
 
-    \begin{center}
-      \huge source $||$ demo $||$ :wq
-    \end{center}
+    \begin{itemize}
+      \item \url{https://www.youtube.com/watch?v=rNNnPrMHsAA} - Piotr Padlewski - C++ WAT
+      \item \url{http://cppquiz.org/} - C++ Quiz
+      \item \url{http://olvemaudal.com/} - Olve Maudal
+      \item ISO14882:2014
+    \end{itemize}
+
+  }
+  \frame
+  {
+    \frametitle{Code and Slides}
+
+    \begin{itemize}
+      \item \url{https://github.com/fmorgner/cpp-quiz}
+      \item \url{http://www.slideshare.net/fmorgner/cpp-quiz}
+    \end{itemize}
 
   }
 

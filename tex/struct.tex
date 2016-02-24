@@ -1,39 +1,50 @@
 \begin{frame}[fragile]
-  \frametitle{struct1}
   \begin{lstlisting}[language={[11]C++}]
-  #include <iostream>
+#include <iostream>
 
-  struct S {
-    int memfun() { return 1; }
-    int memfun() && { return 2; }
-  };
+struct S {
+  int memfun() { return 1; }
+  int memfun() && { return 2; }
+};
 
-  int main() {
-    S o{};
+int main() {
+  S o{};
 
-    std::cout << o.memfun();
-    std::cout << S{}.memfun();
-  }
+  std::cout << o.memfun();
+  std::cout << S{}.memfun();
+}
   \end{lstlisting}
 \end{frame}
 \begin{frame}[fragile]
-  \frametitle{struct1}
-  \begin{lstlisting}[language={[11]C++}]
-  #include <iostream>
+  \begin{lstlisting}
+#include <iostream>
 
-  struct B {
-    virtual ~B() = default;
-    float a;
-    float b;
-  };
+struct B {
+  virtual ~B() = default;
+  float a;
+  float b;
+};
 
-  struct D : B {
-    float c;
-  };
+struct D : B {
+  float c;
+};
 
-  int main() {
-    std::cout << "sizeof(B): " << sizeof(B) << '\n';
-    std::cout << "sizeof(D): " << sizeof(D) << '\n';
-  }
+int main() {
+  // assume: sizeof(float) = 4
+  // assume: sizeof(void*) = 8
+  std::cout << sizeof(B) << '\n';
+  std::cout << sizeof(D) << '\n';
+}
+  \end{lstlisting}
+\end{frame}
+\begin{frame}[fragile]
+  \begin{lstlisting}
+#include <iostream>
+
+struct S { };
+
+int main() {
+  std::cout << sizeof(S) << '\n';
+}
   \end{lstlisting}
 \end{frame}

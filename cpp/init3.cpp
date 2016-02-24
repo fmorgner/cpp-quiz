@@ -6,7 +6,7 @@ int main()
   {
   auto a = "cppug";
 
-  std::vector<std::string> v{{a, a, a}};
+  std::vector<std::string> v{{a, a}};
 
   for(auto const & s : v)
     {

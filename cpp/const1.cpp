@@ -2,14 +2,16 @@
 
 int main()
   {
+  // char const c{'c'};
   char c{'c'};
-  char * pc{&c};
 
-  char * * ptr{&pc};
-  //char const * * ptr{&pc};
+  char * ptr1;
+  //
+  // char const * * ptr2{&ptr1};
+  char * * ptr2{&ptr1};
 
-  c++;
+  *ptr2 = &c;
+  (*ptr1)++;
 
-  std::cout << **ptr << '\n';
+  std::cout << c << '\n';
   }
-

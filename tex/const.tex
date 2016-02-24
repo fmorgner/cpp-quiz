@@ -1,0 +1,16 @@
+\begin{frame}[fragile]
+  \begin{lstlisting}[language={[11]C++}]
+#include <iostream>
+
+int main() {
+  char const c{'c'};
+  char * ptr1;
+  char const * * ptr2{&ptr1};
+  *ptr2 = &c;
+  (*ptr1)++;
+
+  std::cout << c << '\n';
+}
+
+  \end{lstlisting}
+\end{frame}
